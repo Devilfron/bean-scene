@@ -4,6 +4,7 @@ jspm_packages/
 
 # Сборка и временные файлы компиляторов
 .sass-cache/
+.eslintcache
 *.css.map
 *.js.map
 
@@ -24,3 +25,5 @@ pyenv/
 
 # дополнительная информация для меня
 *.txt
+
+
