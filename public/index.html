@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Landing Page</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../src/sass/main.css">
 </head>
 <body>
 
@@ -13,12 +13,33 @@
 
         <!-- БЛОК 1: Шапка сайта (Навигация) -->
         <header class="block-header">
-            <!-- Здесь будут логотип и меню -->
+            <div class="block-header__logo">
+            <!-- Путь пишется сразу от папки assets -->
+                <img src="assets/header/Bean Scene.svg" alt="Bean Scene Coffee">
+            </div>
+        <!-- Тут в будущем будет наше адаптивное меню -->
         </header>
 
         <!-- БЛОК 2: Главный экран (Hero) -->
         <section class="block-hero">
-            <!-- Здесь будет заголовок, чашка кофе и кнопка -->
+            <!-- Левая / верхняя часть: Текст и кнопка -->
+            <div class="block-hero__content">
+                <h1 class="block-hero__title">
+                    Начните свой день с <span>идеального кофе</span>
+                </h1>
+                <p class="block-hero__subtitle" style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8; line-height: 1.6">
+                    Откройте для себя истинный вкус тщательно обжаренных кофейных зерен в самом сердце города. Каждая чашка — это произведение искусства, созданное для вашего вдохновения.
+                </p>
+                <a href="#menu" class="block-hero__button" style="display: inline-block; background-color: #d4af37; color: #1e1b18; padding: 0.8rem 2rem; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s;">
+                    Заказать кофе
+                </a>
+            </div>
+
+            <!-- Правая / нижняя часть: Картинка чашки -->
+            <div class="block-hero__image-wrapper">
+                <!-- Вставьте свою картинку в assets или используйте временную ссылку для теста -->
+                <img src="https://unsplash.com" alt="Свежий горячий кофе">
+            </div>
         </section>
 
         <!-- БЛОК 3: О нас / Наша концепция -->

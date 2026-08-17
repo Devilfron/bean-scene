@@ -1,0 +1,133 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  font-family: "Helvetica", Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fdfaf6;
+  color: #1e1b18;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Настройки главного поля */
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Блоки встают строго друг под друга */
+}
+
+/* Временные стили для блоков, чтобы вы увидели их на экране */
+section, header, footer {
+  width: 100%;
+  min-height: 60vh; /* Каждый блок займет 60% высоты экрана для теста */
+  padding: 2rem; /* Используем относительные rem для отступов */
+  border-bottom: 1px dashed #ccc; /* Пунктирная граница, чтобы видеть разделение */
+}
+
+.block-hero {
+  width: 100%;
+  min-height: 80vh;
+  background-color: #1e1b18;
+  color: #fdfaf6;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .block-hero {
+    flex-direction: row;
+    align-items: center;
+    padding: 4rem;
+  }
+}
+.block-hero__content {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .block-hero__content {
+    width: 50%;
+  }
+}
+.block-hero__title {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.block-hero__title span {
+  color: #d4af37;
+}
+@media (min-width: 1024px) {
+  .block-hero__title {
+    font-size: 3.5rem;
+  }
+}
+.block-hero__image-wrapper {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .block-hero__image-wrapper {
+    width: 50%;
+  }
+}
+.block-hero__image-wrapper img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hero-wrapper {
+  width: 100%;
+  background-color: #1e1b18;
+  background-size: cover;
+  background-position: center;
+}
+
+.block-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .block-hero {
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 2rem;
+  }
+}/*# sourceMappingURL=main.css.map */

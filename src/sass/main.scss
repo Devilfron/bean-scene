@@ -1,6 +1,5 @@
-// Импортируем наши инструменты
-@use 'variables' as v; // Подключаем переменные как объект 'v'
-@use 'mixins' as m; // Подключаем миксины как объект 'm'
+@use 'variables' as v; 
+@use 'mixins' as m; 
 
 // 1. СБРОС СТИЛЕЙ И БАЗА
 * {
@@ -10,18 +9,39 @@
 }
 
 html {
-  font-size: 14px; // На мобильных 1rem = 14px (текст будет чуть компактнее)
+  font-size: 14px; // mobil 1rem = 14px (текст будет чуть компактнее)
   font-family: 'Helvetica', Arial, sans-serif;
+  scroll-behavior: smooth; // Плавная прокрутка до блоков
   background-color: v.$color-light;
   color: v.$color-dark;
 
   // Увеличиваем базовый шрифт на больших экранах
   @include m.tablet {
-    font-size: 16px; // На планшетах 1rem = 16px
+    font-size: 16px; // tablet 1rem = 16px
   }
   @include m.desktop {
-    font-size: 18px; // На ПК 1rem = 18px (весь сайт пропорционально увеличится!)
+    font-size: 18px; // PC 1rem = 18px (весь сайт пропорционально увеличится!)
   }
+}
+body {
+  width: 100%;
+  overflow-x: hidden; // Защита от кривой верстки (чтобы сайт не дергался влево-вправо на телефонах)  
+  background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+/* Настройки главного поля */
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Блоки встают строго друг под друга */
+}
+
+/* Временные стили для блоков, чтобы вы увидели их на экране */
+section, header, footer {
+    width: 100%;
+    min-height: 60vh; /* Каждый блок займет 60% высоты экрана для теста */
+    padding: 2rem;     /* Используем относительные rem для отступов */
+    border-bottom: 1px dashed #ccc; /* Пунктирная граница, чтобы видеть разделение */
 }
 
 // 2. АДАПТИВНАЯ ВЕРСТКА ДЛЯ HERO-БЛОКА
@@ -84,4 +104,45 @@ html {
       object-fit: cover;
     }
   }
+}
+
+// 3. СТИЛИ ДЛЯ ОБЩЕГО ПОЛЯ ШАПКИ И ГЕРОЯ (Тот самый темный фон из Figma)
+.hero-wrapper {
+  width: 100%;
+  background-color: v.$color-dark; // Временный цвет, пока не вставили картинку дерева
+  // background-image: url('../assets/common/bg-wood.jpg'); // Ссылка на будущий фон
+  background-size: cover;
+  background-position: center;
+}
+
+// 4. СТИЛИ БЛОКА 1: HEADER (Шапка сайта)
+.block-header {
+  width: 100%;
+  max-width: 1200px; // Ограничиваем ширину контента на больших мониторах
+  margin: 0 auto;    // Центрируем шапку по центру экрана
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between; // Логотип слева, меню по центру, кнопки справа
+  align-items: center;
+
+  // Здесь будут стили для ссылок меню и кнопок Sign In / Sign Up
+}
+
+// 5. СТИЛИ БЛОКА 2: HERO (Главный экран)
+.block-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include m.tablet {
+    flex-direction: row; // На ПК текст и картинка встают в ряд
+    align-items: center;
+    padding: 5rem 2rem;
+  }
+
+  // Внутренние элементы (Заголовок, Кнопка, Картинка) пишите ниже...
 }
