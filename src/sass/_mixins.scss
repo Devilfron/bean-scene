@@ -1,0 +1,23 @@
+// Миксины (шаблоны для Media Queries) Управление адаптивностью
+
+@use 'variables' as v; // Подключаем переменные как объект 'v'
+
+// Шаблон для быстрой мобильной верстки
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Миксин для адаптивной верстки (Mobile First)
+@mixin tablet {
+  @media (min-width: #{v.$screen-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{v.$screen-desktop}) {
+    @content;
+  }
+}

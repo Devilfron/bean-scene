@@ -1,0 +1,87 @@
+// Импортируем наши инструменты
+@use 'variables' as v; // Подключаем переменные как объект 'v'
+@use 'mixins' as m; // Подключаем миксины как объект 'm'
+
+// 1. СБРОС СТИЛЕЙ И БАЗА
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // Чтобы отступы не раздували ширину блоков
+}
+
+html {
+  font-size: 14px; // На мобильных 1rem = 14px (текст будет чуть компактнее)
+  font-family: 'Helvetica', Arial, sans-serif;
+  background-color: v.$color-light;
+  color: v.$color-dark;
+
+  // Увеличиваем базовый шрифт на больших экранах
+  @include m.tablet {
+    font-size: 16px; // На планшетах 1rem = 16px
+  }
+  @include m.desktop {
+    font-size: 18px; // На ПК 1rem = 18px (весь сайт пропорционально увеличится!)
+  }
+}
+
+// 2. АДАПТИВНАЯ ВЕРСТКА ДЛЯ HERO-БЛОКА
+.block-hero {
+  width: 100%; // Блок всегда занимает всю ширину экрана
+  min-height: 80vh; // Занимает 80% высоты видимого экрана телефона
+  background-color: v.$color-dark;
+  color: v.$color-light;
+  
+  // Относительные отступы (rem) подстроятся под размер экрана автоматически
+  padding: 2.5rem 1.5rem; 
+  
+  display: flex;
+  flex-direction: column; // На смартфонах элементы идут строго друг под другом
+  justify-content: center;
+  gap: 2rem;
+
+  // Изменяем направление элементов на больших экранах (Планшет/ПК)
+  @include m.tablet {
+    flex-direction: row; // Текст и картинка встают в один ряд
+    align-items: center;
+    padding: 4rem; // Увеличиваем отступы на ПК
+  }
+
+  // Внутренний контейнер с текстом
+  &__content {
+    width: 100%; // На мобильном занимает всю ширину
+
+    @include m.tablet {
+      width: 50%; // На ПК отдаем тексту ровно половину экрана (%)
+    }
+  }
+
+  // Адаптивный заголовок
+  &__title {
+    font-size: 2.2rem; // Масштабируется относительно базы html
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    
+    span {
+      color: v.$color-accent; // Выделяем золотом важное слово
+    }
+
+    @include m.desktop {
+      font-size: 3.5rem; // На ПК заголовок станет мощным и крупным
+    }
+  }
+
+  // Адаптивная картинка
+  &__image-wrapper {
+    width: 100%;
+    
+    @include m.tablet {
+      width: 50%; // Картинка занимает вторую половину экрана (%)
+    }
+
+    img {
+      width: 100%; // Картинка сжимается и растягивается под размеры своего контейнера
+      height: auto; // Сохраняет пропорции, не сплющивается
+      object-fit: cover;
+    }
+  }
+}
