@@ -100,8 +100,10 @@ section, header, footer {
 .hero-wrapper {
   width: 100%;
   background-color: url("../../assets/hero/coffee_image.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
 }
 
 .block-header {
@@ -183,5 +185,17 @@ section, header, footer {
   }
   .coffee-item {
     width: 30%; /* Каждая карточка занимает ровно треть пространства */
+  }
+}
+.coffee-card-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .coffee-card-section {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem;
   }
 }/*# sourceMappingURL=main.css.map */

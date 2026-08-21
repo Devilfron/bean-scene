@@ -112,8 +112,10 @@ section, header, footer {
   width: 100%;
   background-color: v.$color-bg-image; // Временный цвет, пока не вставили картинку дерева
   // background-image: url('../assets/common/bg-wood.jpg'); // Ссылка на будущий фон
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
 }
 
 // 4. СТИЛИ БЛОКА 1: HEADER (Шапка сайта)
@@ -202,5 +204,18 @@ section, header, footer {
   }
   .coffee-item {
     width: 30%; /* Каждая карточка занимает ровно треть пространства */
+  }
+}
+// адаптивные Media Queries для карточек кофе
+.coffee-card-section {
+  display: grid;
+  grid-template-columns: 1fr; // На мобилке мужа — всё в один столбик
+  gap: 2rem;
+  padding: 1.5rem;
+
+  // 📱 Подключаем ваш проверенный миксин для планшетов (768px)
+  @media (min-width: v.$screen-tablet) {
+    grid-template-columns: repeat(3, 1fr); // На вашем Макбуке — красивейшие 3 колонки!
+    padding: 3rem;
   }
 }
