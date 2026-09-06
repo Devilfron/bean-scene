@@ -7,6 +7,7 @@ jspm_packages/
 .eslintcache
 *.css.map
 *.js.map
+src/
 
 # Системные файлы операционных систем
 .DS_Store
@@ -15,6 +16,7 @@ Thumbs.db
 # Локальные конфигурации бэкенда и секретные ключи (пароли к базам данных)
 .env
 .env.local
+.vscode/
 
 # Виртуальные окружения Python (все вариации папки venv)
 venv/

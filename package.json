@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "sass-watch": "sass src/sass/main.scss public/css/style.css --watch"
-  },
+    "sass:watch": "scss npx src/scss/main.scss css/style.css --watch --no-source-map",
+    "sass:build": "scss npx src/scss/main.scss css/style.css --style=compressed --no-source-map",
+    "server": "node index.js"  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "sass": "^1.102.0"
   },
