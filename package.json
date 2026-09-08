@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "sass:watch": "scss npx src/scss/main.scss css/style.css --watch --no-source-map",
-    "sass:build": "scss npx src/scss/main.scss css/style.css --style=compressed --no-source-map",
+    "sass:watch": "npx sass src/scss/main.scss css/style.css --watch --no-source-map",
+    "sass:build": "npx sass src/scss/main.scss css/style.css --style=compressed --no-source-map",
     "server": "node index.js"  },
   "keywords": [],
   "author": "",
