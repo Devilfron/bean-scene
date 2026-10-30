@@ -1,18 +1,82 @@
-/* Error: Undefined variable.
- *   ,
- * 9 |     background-color: $color-primary;
- *   |                       ^^^^^^^^^^^^^^
- *   '
- *   src\scss\components\_buttons.scss 9:23  @use
- *   src\scss\main.scss 9:1                  root stylesheet */
+@charset "UTF-8";
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fdfaf6;
+  color: #1e1b18;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 9 \2502      background-color: $color-primary;\d\a   \2502                        ^^^^^^^^^^^^^^\a   \2575 \a   src\\scss\\components\\_buttons.scss 9:23  @use\a   src\\scss\\main.scss 9:1                  root stylesheet";
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+html {
+  font-size: 14px;
+  font-family: "Helvetica", Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fdfaf6;
+  color: #1e1b18;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+.btn--primary {
+  background-color: #3498db;
+  color: #ffffff;
+}
+.btn--primary:hover {
+  background-color: #357abd;
+}
+
+/* Настройки главного поля */
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Блоки встают строго друг под друга */
+  background-image: "../public/assets/hero/coffee_image.jpg"; /* Подставляем картинку из переменной */
+  background-size: cover; /* Картинка растягивается на весь блок */
+  background-position: center; /* Картинка центрируется */
+}
+
+/* Временные стили для блоков, чтобы вы увидели их на экране */
+section, header, footer {
+  width: 100%;
+  min-height: 60vh; /* Каждый блок займет 60% высоты экрана для теста */
+  padding: 2rem; /* Используем относительные rem для отступов */
+  border-bottom: 1px dashed #ccc; /* Пунктирная граница, чтобы видеть разделение */
 }

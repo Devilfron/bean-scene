@@ -9,11 +9,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Делаем папку 'public' статической для выдачи фронтенда
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.static(path.join(__dirname, '/')));
 
 // Главный маршрут
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
