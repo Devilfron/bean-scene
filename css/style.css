@@ -5,6 +5,20 @@
   padding: 0;
 }
 
+body {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #fdfaf6;
+  color: #1e1b18;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -40,16 +54,14 @@ button {
 
 .block-header {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .block-hero {
   width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
   min-height: 80vh;
   background-image: url("../public/assets/hero/coffee_image.jpg");
   background-size: cover; /* Картинка растягивается на весь блок */
@@ -58,8 +70,16 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   color: #ffffff;
 }
 
 /* Настройки главного поля */
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Блоки встают строго друг под друга */
+  justify-content: center;
+}
+
 /* Временные стили для блоков, чтобы вы увидели их на экране */
