@@ -5,18 +5,6 @@
   padding: 0;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #fdfaf6;
-  color: #1e1b18;
-  line-height: 1.5;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
 button {
   cursor: pointer;
   border: none;
@@ -24,19 +12,6 @@ button {
   font-family: inherit;
 }
 
-body {
-  width: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(90deg, #1e1e1e 0%, rgba(0, 0, 0, 0) 100%);
-}
-
-html {
-  font-size: 14px;
-  font-family: "Helvetica", Arial, sans-serif;
-  scroll-behavior: smooth;
-  background-color: #fdfaf6;
-  color: #1e1b18;
-}
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -63,20 +38,28 @@ html {
   background-color: #357abd;
 }
 
-/* Настройки главного поля */
-.main-container {
+.block-header {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
   display: flex;
-  flex-direction: column; /* Блоки встают строго друг под друга */
-  background-image: "../public/assets/hero/coffee_image.jpg"; /* Подставляем картинку из переменной */
-  background-size: cover; /* Картинка растягивается на весь блок */
-  background-position: center; /* Картинка центрируется */
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Временные стили для блоков, чтобы вы увидели их на экране */
-section, header, footer {
+.block-hero {
   width: 100%;
-  min-height: 60vh; /* Каждый блок займет 60% высоты экрана для теста */
-  padding: 2rem; /* Используем относительные rem для отступов */
-  border-bottom: 1px dashed #ccc; /* Пунктирная граница, чтобы видеть разделение */
+  min-height: 80vh;
+  background-image: url("../public/assets/hero/coffee_image.jpg");
+  background-size: cover; /* Картинка растягивается на весь блок */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffffff;
 }
+
+/* Настройки главного поля */
+/* Временные стили для блоков, чтобы вы увидели их на экране */
