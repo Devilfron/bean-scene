@@ -6,11 +6,10 @@
 }
 
 body {
-  width: 100%;
+  display: flex;
   font-family: "Roboto", sans-serif;
   background-color: #fdfaf6;
   color: #1e1b18;
-  line-height: 1.5;
   overflow-x: hidden;
 }
 
@@ -26,6 +25,10 @@ button {
   font-family: inherit;
 }
 
+li {
+  list-style: none;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -35,6 +38,12 @@ button {
   html {
     font-size: 18px;
   }
+}
+html {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
 }
 
 .btn {
@@ -54,19 +63,44 @@ button {
 
 .block-header {
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.block-hero {
-  width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
-  min-height: 80vh;
+  justify-content: center;
+  align-items: center;
   background-image: url("../public/assets/hero/coffee_image.jpg");
   background-size: cover; /* Картинка растягивается на весь блок */
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.block-header__logo {
+  display: flex;
+}
+
+.nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav ul {
+  display: flex; /* Ставить пункти в один рядок */
+  justify-content: center; /* Вирівнює по центру */
+}
+
+.nav a {
+  color: aqua;
+}
+
+.block-hero {
+  width: 527px;
+  height: 490px;
+  max-width: 1200px;
+  margin: 20px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
